@@ -1,0 +1,8 @@
+# Keep only web-ready files — exclude originals and duplicates
+*.HEIC
+*.heic
+*.MOV
+Download.mp4
+9df31ca84c434f75b49696f3d4fcd890.mov
+IMG_1793.MOV
+IMG_1479.MOV

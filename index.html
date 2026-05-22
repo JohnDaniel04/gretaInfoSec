@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 3rd Monthsary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ SCREEN 1 — INTRO ░░ -->
+  <div class="screen active" id="screen-intro">
+    <div class="bg-layer" style="background-image:url('IMG_3737.JPG')"></div>
+    <div class="bg-overlay"></div>
+    <div class="intro-content">
+      <p class="eyebrow">May 23, 2026</p>
+      <h1 class="script-title">Happy 3rd Monthsary,<br>Baby.</h1>
+      <p class="sub">Another month down, a lifetime to go.</p>
+      <button class="tap-btn" onclick="goTo('screen-lock')">Tap to begin</button>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 2 — PIN LOCK ░░ -->
+  <div class="screen" id="screen-lock">
+    <div class="bg-layer" style="background-image:url('IMG_3737.JPG')"></div>
+    <div class="bg-overlay"></div>
+    <div class="lock-content">
+      <h2 class="script-title small">Happy 3rd Monthsary, Baby!</h2>
+      <p class="lock-hint">Enter our monthsary date</p>
+      <div class="pin-card">
+        <div class="pin-display">
+          <span id="pin-input-display">&nbsp;</span>
+          <button class="pin-go" onclick="checkPin()">&#8250;</button>
+        </div>
+        <div class="pin-shake-msg" id="pin-msg"></div>
+        <div class="keypad">
+          <button class="key" onclick="pressKey('1')"><span>1</span></button>
+          <button class="key" onclick="pressKey('2')"><span>2</span></button>
+          <button class="key" onclick="pressKey('3')"><span>3</span></button>
+          <button class="key" onclick="pressKey('4')"><span>4</span></button>
+          <button class="key" onclick="pressKey('5')"><span>5</span></button>
+          <button class="key" onclick="pressKey('6')"><span>6</span></button>
+          <button class="key" onclick="pressKey('7')"><span>7</span></button>
+          <button class="key" onclick="pressKey('8')"><span>8</span></button>
+          <button class="key" onclick="pressKey('9')"><span>9</span></button>
+          <button class="key key-back" onclick="backspaceKey()"><span>&#9003;</span></button>
+          <button class="key" onclick="pressKey('0')"><span>0</span></button>
+          <button class="key key-enter" onclick="checkPin()"><span>&#10003;</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 3 — HUB ░░ -->
+  <div class="screen" id="screen-hub">
+    <div class="bg-layer" style="background-image:url('IMG_3737.JPG')"></div>
+    <div class="bg-overlay"></div>
+    <div class="hub-content">
+      <h2 class="script-title small">Happy 3rd Monthsary, Baby!</h2>
+      <p class="sub">Another month down, a lifetime to go.</p>
+      <div class="hub-grid">
+        <button class="hub-item" onclick="goTo('screen-gallery')">
+          <div class="hub-icon">&#9776;</div>
+          <span>Our Memories</span>
+        </button>
+        <button class="hub-item" onclick="goTo('screen-letter')">
+          <div class="hub-icon">&#9993;</div>
+          <span>My Love Letter</span>
+        </button>
+        <button class="hub-item" onclick="goTo('screen-song')">
+          <div class="hub-icon">&#9835;</div>
+          <span>A Song for You</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 4 — GALLERY ░░ -->
+  <div class="screen" id="screen-gallery">
+    <div class="screen-inner">
+      <button class="back-btn" onclick="goTo('screen-hub')">&#8592; Back</button>
+      <h2 class="section-title">Our Memories</h2>
+      <p class="section-sub">Tap to view &mdash; videos tap to play</p>
+
+      <div class="masonry">
+
+        <!-- col 1 -->
+        <div class="masonry-col">
+          <div class="m-item" data-type="image" data-caption="Us" onclick="openLightbox(this)">
+            <img src="IMG_3737.JPG" alt="Us" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Close together" onclick="openLightbox(this)">
+            <img src="IMG_0956.jpg" alt="Close together" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="video" data-src="5244317756051723840.mp4" data-caption="Together" onclick="openLightbox(this)">
+            <img src="poster1.jpg" alt="Together" />
+            <div class="m-ov video-ov"><span>&#9654; Play</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Night out" onclick="openLightbox(this)">
+            <img src="IMG_2696.jpg" alt="Night out" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Flowers for you" onclick="openLightbox(this)">
+            <img src="IMG_9687.jpg" alt="Flowers for you" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Mirror selfie" onclick="openLightbox(this)">
+            <img src="IMG_0262.jpg" alt="Mirror selfie" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="video" data-src="IMG_1479.mp4" data-caption="Out together" onclick="openLightbox(this)">
+            <img src="poster_IMG_1479.jpg" alt="Out together" />
+            <div class="m-ov video-ov"><span>&#9654; Play</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Video call nights" onclick="openLightbox(this)">
+            <img src="IMG_9908.jpg" alt="Video call nights" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+        </div>
+
+        <!-- col 2 -->
+        <div class="masonry-col">
+          <div class="m-item" data-type="image" data-caption="That smile" onclick="openLightbox(this)">
+            <img src="IMG_3736.JPG" alt="That smile" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Laughing" onclick="openLightbox(this)">
+            <img src="IMG_0957.jpg" alt="Laughing" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="At the concert" onclick="openLightbox(this)">
+            <img src="IMG_3733.JPG" alt="At the concert" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="video" data-src="vid2.mp4" data-caption="A moment" onclick="openLightbox(this)">
+            <img src="poster2.jpg" alt="A moment" />
+            <div class="m-ov video-ov"><span>&#9654; Play</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Being you" onclick="openLightbox(this)">
+            <img src="IMG_2996.PNG" alt="Being you" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="Cinema date" onclick="openLightbox(this)">
+            <img src="IMG_9706.jpg" alt="Cinema date" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="image" data-caption="So close" onclick="openLightbox(this)">
+            <img src="IMG_3234.jpg" alt="So close" />
+            <div class="m-ov"><span>View</span></div>
+          </div>
+          <div class="m-item" data-type="video" data-src="IMG_1793.mp4" data-caption="Pool day" onclick="openLightbox(this)">
+            <img src="poster_IMG_1793.jpg" alt="Pool day" />
+            <div class="m-ov video-ov"><span>&#9654; Play</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lb-nav lb-prev" onclick="event.stopPropagation();shiftLightbox(-1)">&#8249;</button>
+    <div class="lb-content" onclick="event.stopPropagation()">
+      <img id="lb-img" src="" alt="" style="display:none" />
+      <video id="lb-video" controls style="display:none">
+        <source id="lb-video-src" src="" type="video/mp4" />
+      </video>
+      <p id="lb-cap"></p>
+    </div>
+    <button class="lb-nav lb-next" onclick="event.stopPropagation();shiftLightbox(1)">&#8250;</button>
+  </div>
+
+  <!-- ░░ SCREEN 6 — LETTER ░░ -->
+  <div class="screen" id="screen-letter">
+    <div class="bg-layer" style="background-image:url('IMG_3737.JPG')"></div>
+    <div class="bg-overlay dark"></div>
+    <div class="screen-inner centered">
+      <button class="back-btn" onclick="goTo('screen-hub')">&#8592; Back</button>
+      <h2 class="script-title small" style="margin-bottom:40px">My Love Letter</h2>
+      <div class="letter-card">
+        <p>
+          Hi baby, sorry mejo nalate hehehe. Sige na, aaminin ko &mdash; nakalimutan ko, pero hindi ung monthsary natin kung hindi ung date ngayon na mag-23 na pala at nawala sa isip ko na 12am na. Maaalala ko naman yan pag alam ko 23 na, sorry baby.
+        </p>
+        <p>
+          Gusto ko lang sabihin na thank you sa mga efforts na ginagawa mo, and anlaki ng difference natin ngayon compared sa dati &mdash; in a good way syempre. I always pray na sana hanggang tau talaga sa dulo kasi ikaw lang talaga gusto ko makasama habang buhay. Pass sa iba, focus lang sau sah.
+        </p>
+        <p>
+          I love you so much to the point na sinasacrifice ko mga things and even my convenience para sau &mdash; para mafeel mo love ko, malaman mo kung gano ka ka-importante sakin, para marealize mo na gano kita kamahal. Di ako nanunumbat ha, naaappreciate ko lang mga pinagdaanan natin and ano ung mga bagay na kaya nating gawin out of love.
+        </p>
+        <p>
+          Wish ko lang ngayon sana magtrust ka sakin kasi feel ko nagdududa ka minsan, mas malessen ung inis ng baby ko, and mas lumalim pa love natin.
+        </p>
+        <p class="letter-sign">I love you so much, wifey &mdash; pakasal na tau? hehehe mwaa</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 7 — SONG ░░ -->
+  <div class="screen" id="screen-song">
+    <div class="bg-layer" style="background-image:url('IMG_3737.JPG')"></div>
+    <div class="bg-overlay dark"></div>
+    <div class="screen-inner centered">
+      <button class="back-btn" onclick="goTo('screen-hub')">&#8592; Back</button>
+      <h2 class="script-title small" style="margin-bottom:12px">A Song for You</h2>
+      <p class="sub" style="margin-bottom:36px">This song makes me think of you.</p>
+      <div class="spotify-wrap">
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/1udOOSbJnytCdgvbgYOF5s?utm_source=generator"
+          width="100%" height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
